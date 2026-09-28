@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muna Musthak | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f5f7fa;
+            color: #222;
+        }
+
+        /* Navigation */
+        header {
+            background: #111827;
+            color: white;
+            padding: 18px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #60a5fa;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 8%;
+            background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+        }
+
+        .hero-content h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        .hero-content h2 {
+            font-size: 25px;
+            color: #2563eb;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            max-width: 700px;
+            margin: auto;
+            color: #4b5563;
+            font-size: 18px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+        }
+
+        /* General Sections */
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #111827;
+        }
+
+        /* About */
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about p {
+            color: #4b5563;
+            font-size: 17px;
+        }
+
+        /* Education */
+        .education-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .education-card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid #2563eb;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .education-card h3 {
+            color: #2563eb;
+            margin-bottom: 8px;
+        }
+
+        .education-card p {
+            color: #555;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .skill-card h3 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        .skill-card ul {
+            list-style: none;
+        }
+
+        .skill-card li {
+            padding: 6px 0;
+            color: #555;
+        }
+
+        /* Strengths */
+        .strengths {
+            background: #eef2ff;
+        }
+
+        .strength-list {
+            max-width: 800px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .strength {
+            background: white;
+            padding: 18px;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+        }
+
+        /* Contact */
+        .contact {
+            text-align: center;
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .contact-info p {
+            margin: 12px 0;
+            font-size: 17px;
+        }
+
+        .contact-info a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+            .hero-content h2 {
+                font-size: 20px;
+            }
+
+            section {
+                padding: 50px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="logo">Muna Musthak</div>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#strengths">Strengths</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Muna Musthak</h1>
+
+            <h2>Commerce Graduate | Data Science Aspirant</h2>
+
+            <p>
+                Motivated and detail-oriented fresher with a background in
+                Commerce with Computer Applications and currently pursuing
+                a PG Diploma in Data Science.
+            </p>
+
+            <a href="#contact" class="btn">Contact Me</a>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about">
+            <p>
+                I am a motivated and detail-oriented Commerce graduate with
+                a strong foundation in computer applications and data analysis.
+                I am passionate about transforming data into meaningful
+                business insights and developing my skills in the field of
+                Data Science.
+            </p>
+
+            <p style="margin-top: 15px;">
+                I am a quick learner with strong analytical thinking,
+                problem-solving abilities, adaptability, and communication
+                skills. I am looking forward to starting my career in an
+                entry-level Data Analyst or Data Science role.
+            </p>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+
+        <div class="education-container">
+
+            <div class="education-card">
+                <h3>PG Diploma in Data Science</h3>
+                <p><strong>Status:</strong> Pursuing</p>
+            </div>
+
+            <div class="education-card">
+                <h3>Bachelor of Commerce with Computer Applications</h3>
+                <p>Jamia Hamdard Kannur Campus, Kannur City, Kerala</p>
+                <p><strong>2023 – 2026</strong></p>
+            </div>
+
+            <div class="education-card">
+                <h3>Higher Secondary Education</h3>
+                <p>Commerce Stream</p>
+                <p>DIS Girls Higher Secondary School, Kannur City, Kerala</p>
+                <p><strong>2021 – 2023</strong></p>
+            </div>
+
+            <div class="education-card">
+                <h3>High School</h3>
+                <p>CHM Higher Secondary School, Varam, Kannur, Kerala</p>
+                <p><strong>Completed in 2021</strong></p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <h3>Technical Skills</h3>
+                <ul>
+                    <li>C++</li>
+                    <li>SQL</li>
+                    <li>HTML</li>
+                    <li>MS Word</li>
+                    <li>MS Excel</li>
+                    <li>PowerPoint</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <h3>Languages</h3>
+                <ul>
+                    <li>English</li>
+                    <li>Malayalam</li>
+                    <li>Hindi</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <h3>Writing Skills</h3>
+                <ul>
+                    <li>Academic Writing</li>
+                    <li>Creative Writing</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Strengths -->
+    <section class="strengths" id="strengths">
+        <h2 class="section-title">My Strengths</h2>
+
+        <div class="strength-list">
+            <div class="strength">Analytical Thinking</div>
+            <div class="strength">Problem Solving</div>
+            <div class="strength">Quick Learner</div>
+            <div class="strength">Adaptability</div>
+            <div class="strength">Strong Communication</div>
+            <div class="strength">Detail Oriented</div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Contact Me</h2>
+
+        <div class="contact-info">
+
+            <p>
+                📍 <strong>Location:</strong>
+                Varam, Kannur, Kerala, India
+            </p>
+
+            <p>
+                📞 <strong>Phone:</strong>
+                <a href="tel:+916238495930">
+                    +91 6238495930
+                </a>
+            </p>
+
+            <p>
+                ✉️ <strong>Email:</strong>
+                <a href="mailto:munamusthak31@gmail.com">
+                    munamusthak31@gmail.com
+                </a>
+            </p>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Muna Musthak. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+```
